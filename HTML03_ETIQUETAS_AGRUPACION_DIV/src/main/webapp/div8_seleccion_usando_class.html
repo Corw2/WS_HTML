@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<style type="text/css">
+		
+			.capas {
+					width:150px; 
+					height:150px;
+					border:2px solid red;
+					border-radius:25px; 
+					background-color:yellow;
+					margin-top:30px;
+					margin-bottom:30px;
+			}
+		
+			.enVerde {
+				background-color:lime;
+			}
+			
+			#capa1:hover,  #capa2:hover {
+				border-width:10px;
+			}
+			
+		
+		</style>
+		
+
+		<script type="text/javascript">
+			
+			function f_redondear() {
+				
+				alert("QUIERE REDONDEAR !!! ");
+				
+				// USANDO class:				
+				var arrayLasCapas = document.getElementsByClassName("capas");				
+
+
+				var valorRadioActual = arrayLasCapas[0].style.borderRadius;
+				
+				
+				// OJO, LA PRIMERA VEZ EL VALOR DEL RADIO NO ESTÁ PRESENTE,
+				//		NO INDICA NINGÚN VALOR. CON LA 2 Y SIGUIENTE SOLICITUDES
+				//		YA SÍ ... a ver cómo se resuelve.
+				
+				//alert("VALOR RADIO ACTUAL ... " + valorRadioActual);
+				
+				if(valorRadioActual === "150px") {
+					//alert("LAS CAPAS YA ESTAN REDONDAS ... SALIR !!");
+					return;
+				}
+				
+				
+				for(var i=0; i<arrayLasCapas.length; i++) {
+					arrayLasCapas[i].style.borderRadius = "150px";
+				}
+				
+			}
+
+			function f_anularRedondear() {
+				// USANDO clss:
+				var arrayLasCapas = document.getElementsByClassName("capas");	
+				
+				for(var i=0; i<arrayLasCapas.length; i++) {
+					arrayLasCapas[i].style.borderRadius = "25px";
+				}
+			}			
+			
+		</script>
+
+
+	</head>
+
+
+	<body>
+	
+		<div align="center">
+			
+			<h1> DHTML - getElementsByClassName(nombre de la clase CSS que usa) </h1>
+			
+			<div id="capa1" name="lasCapas" class="capas"></div>			
+
+			<div id="capa2" name="lasCapas" class="capas enVerde"></div>
+			
+			<br/><br/>
+			
+			<button onclick="f_redondear();">
+				REDONDEAR
+			</button>
+			
+			<button onclick="f_anularRedondear();">
+				ANULAR REDONDEO
+			</button>
+			
+		</div>
+		
+	</body>
+
+</html>

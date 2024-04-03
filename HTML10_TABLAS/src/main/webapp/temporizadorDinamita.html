@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<script type="text/javascript">
+		
+			function f_encender() {
+				
+				console.log("1 - ENCENDEMOS LA MECHA Y A SALIR POR PATAS");
+				
+				f_correr();		// SIN RETARDO
+				
+				
+				// BIEN (callback de temporización) - ASINCRONIA
+				setTimeout(f_explotar, 3000);	// 3 SEGUNDOS DE RETARDO.
+				
+				// MAL (ejecuta inmediatamente) - SINCRONIA ... EJECUCIÓN INMEDIATA.
+				//setTimeout(f_explotar(), 3000);	// 3 SEGUNDOS DE RETARDO.
+				
+			}
+			
+			
+			function f_correr() {
+				console.log("2 - !!! CORRE QUE TE CORRE !!!");
+			}
+			
+			
+			function f_explotar() {
+				console.log("3 - !!! BOOM !!!");
+			}
+			
+		</script>
+		
+	</head>
+
+
+	<body>
+	
+		<div align="center">
+			
+			<h1> ENCIENDE Y CORRE </h1>
+			
+			<button onclick="f_encender();">
+				ENCENDER
+			</button>		
+
+		</div>
+		
+	</body>
+
+</html>

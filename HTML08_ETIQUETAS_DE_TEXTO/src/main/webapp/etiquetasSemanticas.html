@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<style type="text/css">
+		
+			hr {
+				display:block;
+				margin:50px 0px;
+				width:80%;
+			}
+			
+			
+			p {
+				text-align:left;
+				margin:0px 10px;
+			}
+			
+			
+			strong {
+				color:red;
+				font-size:larger;
+			}
+			
+			strong > strong {
+				color:blue;
+				font-size:1cm;
+			}
+			
+			span {
+				margin-right:30px;
+			}
+			
+			small {
+				font-size:6px;
+			}
+			
+			.pelicula {
+				width:550px;
+				border:2px solid blue;
+				background-color:cyan;
+				border-top-left-radius: 25px;
+				border-bottom-right-radius: 25px;
+				padding:15px;			
+			}
+		
+			.contenedor {
+				width:550px;
+				border:1px solid brown;
+				border-top-left-radius: 25px;
+				border-bottom-right-radius: 25px;
+				padding:15px;			
+			}
+			
+		</style>
+		
+	</head>
+
+
+	<body>
+	
+		<div align="center">
+			
+			<h1> ETIQUETAS SEMÁNTICAS PARA TEXTO </h1>
+			
+			
+			<div class="pelicula">
+				<p>
+					A principios del siglo XXI la Tyrell Corporation desarrolló
+					un nuevo tipo de robot. Un ser virtualmente identico al hombre
+					y conocido como <strong>replicante</strong>. <br/> Los replicantes Nexus6
+					eran superiores en fuerza y agilidad y al menos iguales en inteligencia
+					a los ingenieros de genética que los crearon ... 
+					
+				
+				</p> 
+			</div>
+
+
+			<hr/>
+			
+
+			<div class="pelicula" style="background-color:orange;">
+				<p>
+					Skynet creó el cyborg que los aterrorizados humanos denominaron: <br/>
+						 <strong> TERMINATOR <strong>T101</strong> </strong>					
+				
+				</p> 
+			</div>
+
+
+			<hr/>
+
+
+			<div class="contenedor">
+				<p>
+					Ejemplo de un texto escrito <b>en negrita</b>. También por CSS ... font-weight:bold;
+				</p>			
+			</div>	
+
+
+			<hr/>
+
+
+			<div class="contenedor">
+				<p>
+					El arbitro no pito nada, pero <em>fue penalty</em>
+				</p>			
+			</div>
+
+
+			<hr/>
+
+
+			<div class="contenedor">
+				<p>
+					La palabra <i>can</i> en inglés es el verbo poder, pero también es lata (cerveza).
+				</p>			
+			</div>
+
+
+			<hr/>
+
+
+			<div class="contenedor">
+				<p>
+					El código de conducta de una samurai se basa en el <mark>HONOR</mark>.
+				</p>			
+			</div>		
+
+
+			<hr/>
+
+
+			<div class="contenedor">
+				<p>
+					<!-- <u> KILL BILL - capitulo 2 </u>  -->
+					<span style="text-decoration:underline;"> KILL BILL - capitulo 2 </span>
+				</p>			
+			</div>		
+
+
+			<hr/>
+
+
+			<div class="contenedor">
+				<p>					
+					<!--
+					BLACK FRIDAY - PLAYSTATION 5 ... <s>ANTES: 999€</s> AHORA: 499€.
+					-->
+					
+					<!-- 
+					BLACK FRIDAY - PLAYSTATION 5 ... <strike>ANTES: 999€</strike> AHORA: 499€.
+					-->
+					
+					BLACK FRIDAY - PLAYSTATION 5 ... 
+						<del style="text-decoration-color:red;">ANTES: 999€</del> AHORA: 499€.
+				</p>			
+			</div>			
+			
+
+
+			<hr/>
+
+
+			<div class="contenedor">
+				<p style="text-align:center;">					
+					<span style="color:green;">MANZANA</span>
+					<span style="color:yellow;">BANANA</span>
+					<span style="color:red;">FRESA</span>
+					
+					<!-- 
+						<span style="display:block; color:yellow;">BANANA</span>
+						<span style="display:none; color:yellow;">BANANA</span>
+						<span style="visibility:hidden; color:yellow;">BANANA</span>
+					 -->
+					
+				</p>			
+			</div>				
+
+
+			<hr/>
+
+						
+			<div class="contenedor">
+				<p>
+					<q cite="ALIENS - EL 8 PASAJERO">
+						Es un superviviente al que no afectan la conciencia, <br/>
+							los remordimientos ni las fantasias de moralidad.
+					</q>					
+				</p>			
+			</div>		
+
+
+
+			<hr/>
+
+						
+			<div class="contenedor">
+				<p>
+					Cervante iniciaba su obra literaria El Quijote con la
+					frase ... <br/>
+					<cite> en un lugar de cuyo nombre no quiero acordarme.</cite>
+				</p>			
+			</div>
+
+
+
+			<hr/>
+
+						
+			<div class="contenedor">
+				<p> El agua, H<sub>2</sub>O presenta tensión superficial. </p>
+				<br/>
+				<p> La formula de Einstein e=mc<sup>2</sup> nos da la energía
+						asociada a una partícula en reposo.</p>			
+			</div>
+
+
+			<hr/>
+
+						
+			<div class="contenedor">
+				<p> Intereses a tu medida, <strong>vive feliz</strong> 
+					<small> ... mientras puedas porque 25% TAE. </small>
+				</p>
+					
+			</div>
+
+
+			<hr/>
+
+						
+			<div class="contenedor">
+				<p> <abbr>LOL</abbr> means ...  
+					laugh out loud ... usease <q> PARTIRSE DE RISA. </q>
+				</p>					
+			</div>			
+
+
+			<hr/>
+
+						
+			<div class="contenedor">
+				<p> <dfn>D</dfn> es ...  
+					el vector de polarizacion de un condensador.
+				</p>					
+			</div>
+
+
+			<hr/>
+
+						
+			<div class="contenedor">
+				<div style="width:100px; border:1px solid red;">
+					<p> 
+						Super <wbr/> 
+						Pastelito <wbr/> 
+						Bimbo <wbr/> 
+						Fresco <wbr/> 
+						Delicioso
+					</p>
+				</div>					
+			</div>
+
+
+			<hr/>
+
+						
+			<div class="contenedor">
+				<p>
+					la combinación de teclas <kbd>CTRL + U</kbd>
+						<br/>
+						permite ver el código de la página web.				
+				</p>				
+			</div>			
+
+
+			<hr/>
+
+						
+			<div class="contenedor">
+				<p>
+					Un error de tipo <samp> HTTP-500 </samp> quiere decir: 
+					<br/>
+					SE HA PRODUCIDO UN ERROR EN EL SERVIDOR (ERROR INTERNO). 
+							
+				</p>				
+			</div>
+
+
+			<hr/>
+
+						
+			<div class="contenedor">
+				<p>
+					<time datetime="2024-2-1T8:49" name="fechaHora" 
+							onclick="alert(this);">
+						SON LAS 8:47 DEL 1 DE ENERO DE 2024
+					</time>
+				</p>
+			</div>
+
+
+			<hr/>
+
+						
+			<div class="contenedor">
+				<p>
+					<data value="RJ45"> 
+						RJ45: Un conector para cable de red de 8 pines.
+					</data> 
+				</p>
+			</div>			
+
+
+			<hr/>
+
+						
+			<div class="contenedor">
+				<p>
+					la variable <var>x</var> en JavaScript puede almacenar cualquier tipo de dato.
+				</p>
+			</div>			
+			
+
+			<hr/>
+
+						
+			<div class="contenedor" style="background:yellow;">
+				
+					<pre>
+						<code style="background:lime;">
+							&lt;script&gt;
+								alert("HOLA MUNDO !!!");				
+							&lt;/script&gt;
+						</code>
+					</pre>
+				
+			</div>	
+			
+
+			<hr/>
+
+						
+			<div class="contenedor" style="font-size:small;">
+				
+				<p> <b>El antivirus ha sido actualizado para hacer frente a las nuevas amenazas</b> </p>
+				
+				<br/>
+				
+				<ins datetime="2024-01-22" cite="https://definiciones.virus.com/covid-3.3">				
+					<p>Virus: Covid 3.3. Nueva infección del sistema de arranque </p>
+				</ins>
+				
+				<br/>
+				
+				<ins datetime="2022-01-21" cite="https://definiciones.malware.com/doctor-maligno-1.0">
+					<p>Malware: Doctor Maligno 1.0. Borrado de archivos en discos locales y dispositivos usb insertados </p>
+				</ins>
+				
+			</div>			
+			
+
+			<hr/>
+
+						
+			<div class="contenedor" style="font-size:15px;">
+				<p>
+					Descuento del 50% (sólo hasta fin de existencias): <br/>
+					PlayStation 5 (3 unidades), <del style="color:red;">Nintendo Switch Oled</del>, Xbox Series X (6 unidades).
+				</p>				
+			</div>				
+			
+			
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</div>
+	
+	</body>
+
+</html>

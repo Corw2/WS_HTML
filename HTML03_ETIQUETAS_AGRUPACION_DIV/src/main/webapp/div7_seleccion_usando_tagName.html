@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<style type="text/css">
+		
+			.capas {
+					width:150px; 
+					height:150px;
+					border:2px solid red;
+					border-radius:25px; 
+					background-color:yellow;
+					margin-top:30px;
+					margin-bottom:30px;
+			}
+		
+			.enVerde {
+				background-color:lime;
+			}
+			
+			#capa1:hover,  #capa2:hover {
+				border-width:10px;
+			}
+			
+		
+		</style>
+		
+
+		<script type="text/javascript">
+			
+			function f_redondear() {
+				// USANDO name:				
+				var arrayLasCapas = document.getElementsByTagName("div");				
+				
+				// NO HAGAS HARD-CODING ... mejor que la máquina calcule el valor (cuántas capas hay)
+				for(var i=0; i<arrayLasCapas.length; i++) {
+					arrayLasCapas[i].style.borderRadius = "150px";
+				}
+				
+			}
+
+			function f_anularRedondear() {
+				// USANDO name:
+				var arrayLasCapas = document.getElementsByTagName("div");	
+				
+				// EL PRIMER ELEMENTO ES LA CAPA CONTENEDOR PRINCIPAL (centrado horizontal).
+				//	Y NO LA QUEREMOS, LUEGO EMPEZAR i (índice) EN 1, EN LUGAR DE EN 0.
+				for(var i=1; i<arrayLasCapas.length; i++) {
+					arrayLasCapas[i].style.borderRadius = "25px";
+				}
+			}			
+			
+		</script>
+
+
+	</head>
+
+
+	<body>
+	
+		<div align="center">
+			
+			<h1> DHTML - getElementsByTagName(nombre de la etiqueta HTML) </h1>
+			
+			<div id="capa1" name="lasCapas" class="capas"></div>			
+
+			<div id="capa2" name="lasCapas" class="capas enVerde"></div>
+			
+			<br/><br/>
+			
+			<button onclick="f_redondear();">
+				REDONDEAR
+			</button>
+			
+			<button onclick="f_anularRedondear();">
+				ANULAR REDONDEO
+			</button>
+			
+		</div>
+		
+	</body>
+
+</html>

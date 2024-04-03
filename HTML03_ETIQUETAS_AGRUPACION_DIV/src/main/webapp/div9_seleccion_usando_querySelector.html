@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<style type="text/css">
+		
+			.capas {
+					width:150px; 
+					height:150px;
+					border:2px solid red;
+					border-radius:25px; 
+					background-color:yellow;
+					margin-top:30px;
+					margin-bottom:30px;
+			}
+		
+			.enVerde {
+				background-color:lime;
+			}
+		
+		</style>
+		
+
+		<script type="text/javascript">
+			
+			function f_redondear() {
+				// USANDO #id:
+				/*
+				document.querySelector("#capa1").style.borderRadius = "150px";
+				document.querySelector("#capa2").style.borderRadius = "150px";
+				*/
+				
+				// USANDO EL .class
+				/*
+				document.querySelector(".capas").style.borderRadius = "150px";
+				document.querySelector(".enVerde").style.borderRadius = "150px";
+				*/
+				
+				// USANDO EL .class y la posición del array que generar ALL:
+				/*
+				document.querySelectorAll(".capas")[0].style.borderRadius = "150px";	
+				document.querySelectorAll(".capas")[1].style.borderRadius = "150px";
+				*/
+				
+				var arrayCapas = document.querySelectorAll(".capas"); // 2 capas.
+				
+				for(var i=0; i<arrayCapas.length; i++) {
+					arrayCapas[i].style.borderRadius = "150px";
+				}
+						
+			}
+
+			function f_anularRedondear() {
+				// USANDO .class:
+
+				var arrayCapas = document.querySelectorAll(".capas"); // 2 capas.
+				
+				for(var i=0; i<arrayCapas.length; i++) {
+					arrayCapas[i].style.borderRadius = "50px";
+				}
+					
+					
+			}
+			
+			
+		</script>
+
+
+	</head>
+
+
+	<body>
+	
+		<div align="center">
+			
+			<h1> DHTML - querySelector/All(.nombre clase) </h1>
+			
+			<div id="capa1" class="capas"
+					onmouseover="this.style.borderWidth='10px';"
+					onmouseleave="this.style.borderWidth='3px';">
+			</div>			
+
+			<div id="capa2" class="capas enVerde"
+					onmouseover="this.style.borderWidth='10px';"
+					onmouseleave="this.style.borderWidth='3px';">
+			</div>
+			
+			<br/><br/>
+			
+			<button onclick="f_redondear();">
+				REDONDEAR
+			</button>
+			
+			<button onclick="f_anularRedondear();">
+				ANULAR REDONDEO
+			</button>
+			
+		</div>
+		
+	</body>
+
+</html>

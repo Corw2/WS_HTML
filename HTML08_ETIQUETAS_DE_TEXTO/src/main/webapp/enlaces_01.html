@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<style type="text/css">
+
+			a {
+				display: block;
+				margin:50px 0px;	/* arriba_abajo    derecha_izquierda */
+			}
+
+			div.capaAzul {
+				background-color: cyan;
+			}
+
+			div.capaVerde {
+				background-color: lime;
+			}
+
+			
+			div.capaAzul, div.capaVerde {
+				margin-top: 1000px;
+				width: 500px;
+				height: 300px;
+				border: 3px solid black;
+			}
+
+			
+		</style>
+		
+	</head>
+
+
+	<body>
+	
+		<div align="center" id="home">
+			
+			<h1> ENLACES - SALTOS LOCALES POR ID </h1>
+			
+			<a href="https://www.aemet.es/es/portada" target="_blank">
+				IR A LA AGENCIA ESTATAL METEOROLOGICA
+			</a>
+
+			<br/>
+			
+			<a href="#zonaAzul">
+				IR A LA ZONA AZUL
+			</a>
+			
+			<br/>
+			
+			<a href="#zonaVerde">
+				IR A LA ZONA VERDE
+			</a>
+			
+			<a href="recursos/calendario.pdf" download="calendario.pdf">
+				DESCARGAR CALENDARIO
+			</a>
+			
+			
+			
+			
+			
+			<div id="zonaAzul" class="capaAzul">
+				<a href="#home"> HOME </a>
+			</div>
+						
+			<div id="zonaVerde" class="capaVerde">
+				<a href="#home"> HOME </a>
+			</div>
+			
+		</div>
+		
+	</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+			<style type="text/css">
+			
+				span {
+					width:150px;
+					/*height:150px;*/
+					border:2px solid red;
+					padding:30px;
+				}
+			
+			</style>
+		
+		
+			<script type="text/javascript">
+			
+				const CUANTOS = 16;	// 4x4
+			
+				
+				
+				function f_crearTablero() {
+										
+					var capaTablero = document.querySelector("#tablero");
+					
+					
+					for(let i=0; i<CUANTOS; i++) {
+					
+						var nuevoElemento = document.createElement("span");			// ELEMENTO.
+						
+						nuevoElemento.innerHTML = i;
+						
+						if(i%8==0) {
+							capaTablero.appendChild(document.createElement("br"));
+							capaTablero.appendChild(document.createElement("br"));
+							capaTablero.appendChild(document.createElement("br"));
+							capaTablero.appendChild(document.createElement("br"));
+							capaTablero.appendChild(document.createElement("br"));
+							capaTablero.appendChild(document.createElement("br"));
+						}
+										
+						capaTablero.appendChild(nuevoElemento);						// AÑADIR.
+						
+					}
+					
+				}
+				
+			</script>
+		
+	</head>
+
+
+	<body>
+	
+		<div align="center">
+
+			
+			<h1> TABLERO CASINO </h1>
+			
+			
+			<br/><br/>
+			
+			
+			<button onclick="f_crearTablero();">
+				!! JUGAR !!
+			</button>
+			
+			
+			<br/><br/>
+			
+			
+			<div id="tablero"></div>			
+			
+
+		</div>
+		
+	</body>
+
+</html>

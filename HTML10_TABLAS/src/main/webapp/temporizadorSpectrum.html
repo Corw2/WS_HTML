@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<style type="text/css">
+		
+			body {
+				color:orange;
+				background-color:black;
+				background-image:url("img/spectrum.jpg");  				
+  				background-size: cover;
+				background-repeat: no-repeat;
+			}
+		
+		
+			button {
+				width:300px;
+				height:50px;
+				font-size:18px;
+				font-weight:bolder;
+				margin:0px 50px;
+			}
+		
+		
+			#tv {
+				margin-top:75px;
+				color:white;
+				font-size:30px;
+				font-weight:bolder;
+				width:300px;
+				height:300px;
+				background-color:cyan;
+				border:5px solid brown;
+				border-radius:25px;
+				padding:80px;
+				opacity:0.6;			
+			}
+		
+		
+			.numeros {
+				font-size:4cm;
+				padding:80px;
+			}
+
+			
+			.botonera {
+				/*background-color:yellow;*/
+				margin-top:35px;
+				width:60%;
+			}
+		
+		</style>
+		
+		
+		<script type="text/javascript">
+		
+			const cuantosParpadeos = 5;
+						
+			var modoInfinito = false;
+			
+			var retardo = 100;				// milisegundos.
+			
+			var temporizadorInfinito;
+			
+			var contador = 0;
+			
+			
+		
+			
+			function f_iniciar(infinito) {
+				
+				// RESET DEL CONTADOR DE UN POSIBLE "CARGAR INFINITO" ANTERIOR PARA HACER 5 PULSOS.
+				if(modoInfinito && !infinito) {
+					contador = 0;
+				}
+				
+				
+				// MEMORIZAR GLOBALMENTE (MODO INFINITO / MODO FINITO).
+				modoInfinito = infinito;				
+				
+				
+				if(modoInfinito) {
+				
+					retardo = 100;
+					
+					document.querySelector("#boton5Pulsos").disabled = true;
+
+					temporizadorInfinito = setInterval(f_cambiarColor, retardo);
+					
+					document.querySelector("#botonIniciarInfinito").style.display = "none";					
+
+					document.querySelector("#botonPararInfinito").style.display = "inline-block";
+				
+				} else {
+					
+					retardo = 1000;
+
+					// SI SE INICIÓ Y LUEGO SE DETUVO EL TEMPORIZADOR DE INFINITO, SU TEXTO CAMBIÓ DE "CARGAR INFINITO" A
+					//		"CONTINUAR INFINITO". EN ESTAS CIRCUNSTANCIAS, SI SE PULSA "CARGAR 5 PULSOS", SE RESETEARÁ EL
+					//		TEXTO DEL BOTÓN INFINITO A "CARGAR INFINITO" ADEMÁS DEL PROPIO CONTADOR QUE VALDRÁ 0.
+					
+					document.querySelector("#botonIniciarInfinito").innerText = "CARGAR INFINITO";
+					document.querySelector("#botonIniciarInfinito").disabled = true;
+
+					
+					if(contador < cuantosParpadeos) {
+						setTimeout(f_cambiarColor, retardo);
+						
+					} else {
+						contador = 0;
+						document.querySelector("#botonIniciarInfinito").disabled = false;
+					}
+					
+				}
+				
+			}	
+			
+			
+			
+			function f_pararInfinito() {
+				
+				//alert("PARAR INFINITO");				
+				
+				document.querySelector("#botonIniciarInfinito").style.display = "inline-block";
+				document.querySelector("#botonIniciarInfinito").innerText = "CONTINUAR INFINITO"; // NO ES VALUE.
+				
+				document.querySelector("#botonPararInfinito").style.display = "none";
+				
+				document.querySelector("#boton5Pulsos").disabled = false;
+				
+				window.clearInterval(temporizadorInfinito);
+				
+			}
+			
+			
+		
+			// LEER PROPIEDADES CSS DESDE JAVASCRIPT CON ........ window.getComputedStyle(elemento):
+			//			https://zellwk.com/blog/css-values-in-js/
+			//				Turns out, there are two possible ways, depending on whether you’re trying to get inline styles or computed styles.
+			//
+			//	SI EL ESTILO SE DEFINIÓ EN LÍNEA NO DEBERÍA HABER PROBLEMAS EN UTILIZAR EN RECUPERAR EL VALOR DE LA PROPIEDAD:
+			//		document.getElementById("tv").style.backgroundColor;
+			//
+			//	... PERO SI SE DEFINIÓ INCRUSTADO, HAY QUE UTILIZAR computedStyle O NO OBTENDREMOS NADA CON LA PRIMERA LECTURA:
+				
+				
+			
+			function f_cambiarColor() {
+				
+				// 1. LOCALIZAR EL ELEMENTO EN EL DOM ( por document.getElementById("xxx") o utilizando document.querySelector("yyy") ):
+				var cajaTv = document.querySelector("#tv");
+				//alert("cajaTV = " + cajaTv);
+				
+				
+				
+				// 2. SOLICITAR EL OBJETO DE ESTILOS SOBRE EL ANTERIOR ELEMENTO ... getcomputedStyle(elemento):
+				var estilosCajaTv = getComputedStyle(cajaTv);
+				//alert("estilosCajaTv = " + estilosCajaTv);
+				
+				
+				// 3. CONSULTAR LA PROPIEDAD QUE DESEEMOS SOBRE DICHO OBJETO DE ESTILOS DEL ELEMENTO BUSCADO EN EL DOM.				
+				var colorFondoActual = estilosCajaTv.backgroundColor;
+				//alert("colorFondoActual = " + colorFondoActual);
+				
+				
+				// 3. EFECTUAR LA LÓGICA DE NEGOCIO:
+				if(colorFondoActual === "rgb(0, 255, 255)") {					// CYAN
+					cajaTv.style.backgroundColor = "rgb(255, 0, 0)";			// ROJO					
+				} else {
+					cajaTv.style.backgroundColor = "rgb(0, 255, 255)";			// CYAN	
+				}
+				
+				
+				// INCREMENTAR AQUÍ EL CONTADOR PARA QUE SIRVA A LOS 2 MODOS (INFINITO Y NO INFINITO)
+				cajaTv.innerHTML = "<div> LOADING !! <br/> <div class='numeros'> " + ++contador
+										+ " </div> </div>";
+				
+										
+				// LIMITAR LA CUENTA A UN MÁXIMO DE 99 PARA QUE NO SE DESCUADRE EL NÚMERO EN LA CAPA DE COLORES:
+				if(contador == 99) {
+					contador = 0;
+				}
+								
+									
+				 // FUNCIÓN CÍCLICA HASTA SUPERAR EL NÚMERO DE PARPADEOS EN EL MODO NO INFINITO.
+				if( ! modoInfinito ) {
+					f_iniciar(false);
+				}
+				
+			}
+			
+			
+		</script>
+		
+	</head>
+
+
+	<body>
+	
+		<div align="center">
+			
+			<h1> SPECTRUM 48K </h1>
+
+			
+			<div id="tv"></div>
+
+
+			<div class="botonera">
+
+				<!--  TEMPORIZADORES: https://es.javascript.info/settimeout-setinterval -->
+
+				<button id="botonIniciarInfinito" onclick="f_iniciar(true);" style="display:inline-block;">
+					CARGAR INFINITO
+				</button>
+								
+				<button id="botonPararInfinito" onclick="f_pararInfinito();" style="display:none;">
+					PARAR INFINITO
+				</button>
+	
+	
+				<button id="boton5Pulsos" onclick="f_iniciar(false);">
+					CARGAR 5 PULSOS
+				</button>
+
+			</div>
+
+
+		</div>
+		
+	</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<style type="text/css">
+		
+			fieldset {
+				margin-top: 60px;
+				border: 6px solid green;
+				border-radius: 25px;
+				width: 30vw;			
+			}
+			
+					
+			fieldset div {
+				margin: 15px;
+				font-size: 25px;
+				display: flex;
+				justify-content: space-between;				 
+			}
+			
+			
+			label {
+				margin-right: 130px;
+				background: yellow;			
+			}
+
+			
+			img {
+				margin-right:20px;
+				width: 150px;
+				height: auto;
+				border-radius: 25px;
+						
+			}
+			
+			
+			strong {
+				color: red;
+				font-size: 30px;
+			}
+			
+			
+			
+			/* MIS CLASES CSS */			
+			
+			div.visualizar {
+				margin-top:	50px;
+				margin-bottom: 25px;
+				width: 500px;
+				height: 200px;
+				padding-top: 40px;
+				border-radius: 25px;
+				background-color: pink;
+				visibility: hidden;		/* visible */
+			}
+			
+			
+			small.enMarron {
+				color: brown;
+				font-size: small;
+			}
+			
+		</style>
+		
+		
+		<script type="text/javascript">
+		
+			function f_seleccionar() {
+				
+				var radiosTabaco = document.getElementsByName("tabacos");
+				
+				//alert("radiosTabaco ... " + radiosTabaco);
+				
+				var contador = 0;
+				var radioActual;
+				
+				
+				do {
+					
+					radioActual = radiosTabaco[contador];					// mejor radiosTabaco[contador++]
+					
+					if (radioActual.checked) {
+						
+// 						alert(radioActual.id.toUpperCase() + " ... " +
+// 								radioActual.value + " ... " +
+// 									(radioActual.checked ? "ACTIVO" : ""));		// (evaluacion ? "cierto" : "falso")
+					}
+					
+					contador++;		// contador = contador + 1			pre: --contador     post: contador--
+					
+				} while(!radioActual.checked);								// radioActual.checked != true
+				
+				
+				
+				
+				//////////////// VISUALIZAR LA CAPA OCULTA //////////////////////
+				
+				document.querySelector(".visualizar").style.visibility = "visible";
+				
+				
+				let queFoto 	= radioActual.id + ".jpg";
+				let queMarca	= radioActual.id.toUpperCase();
+				let quePrecio 	= radioActual.value + " €";
+				
+				
+				let cadena = "<img src='img/" + queFoto + "' alt='TABACO' title='PAQUETE DE TABACO'/>" +
+								"<span>" + queMarca + "</span>" +
+									"<span> <strong> " + quePrecio + " </strong> </span>";
+				
+				
+				// RELLENAR LA CAPA: 
+				document.querySelector(".visualizar").innerHTML = cadena;									
+									
+			}
+		
+		</script>
+		
+		
+	</head>
+
+
+	<body>
+	
+		<div align="center">
+						
+			<h1> ESTANCO</h1>			
+						
+			<fieldset>
+			
+				<div>
+					<label> FORTUNA </label>
+					<input type="radio" name="tabacos" id="fortuna" value="4.95" checked/>
+				</div>
+			
+				<div>
+					<label> MALBORO </label>
+					<input type="radio" name="tabacos" id="malboro" value="5.35"/>
+				</div>			
+			
+				<div>
+					<label> CAMEL </label>
+					<input type="radio" name="tabacos" id="camel" value="5.20"/>
+				</div>				
+			
+			
+				<div style="justify-content:center;">
+					<button type="button" onclick="f_seleccionar();">
+						- SELECCIONAR -
+					</button>				
+				</div>
+			
+			</fieldset>
+			
+
+			<div class="visualizar">
+				<span id="foto"></span>
+				<span id="marca"></span>
+				<span id="precio"></span>				
+			</div>
+		
+
+			<small class="enMarron">
+				LAS AUTORIDADES SANITARIAS ADVIERTEN QUE FUMAR ES PERJUDICIAL PARA LA SALUD
+			</small>
+
+		</div>
+		
+	</body>
+
+</html>

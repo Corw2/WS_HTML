@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+	</head>
+
+
+	<body>
+	
+		<div align="center">
+			
+			<h1> CREAR UN PARRAFO CON EL DOM Y JAVASCRIPT </h1>
+			
+			<br/><br/><br/>
+
+			<div id="monitorPruebas"></div>
+			
+			
+			
+			<script type="text/javascript">
+			
+				///////////////// CREAR NODO /////////////////////////////
+			
+				var elParrafoCreado = document.createElement("p");
+			
+				elParrafoCreado.innerHTML = "HOLA IVAN !!!";
+				
+				// <p style="color:blue; font-size:30px;"> HOLA IVAN !! </p>
+				
+				// (nombreAtributo, valorAtributo)
+				elParrafoCreado.setAttribute("style", "color:blue; font-size:30px;");
+				
+				
+				////////////////// INYECTAR EL NODO - appendChild ///////////
+								
+				document.getElementById("monitorPruebas").appendChild(elParrafoCreado);
+								
+			</script>			
+
+		</div>
+		
+	</body>
+
+</html>

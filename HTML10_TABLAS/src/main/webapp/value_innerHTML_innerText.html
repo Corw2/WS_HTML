@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+	</head>
+
+
+	<!-- <body onload="alert('CARGA DEL BODY FINALIZADA');">  -->
+	
+	<body>
+		<div align="center">
+			
+			<h1> 1 - CAJA TEXTO </h1>
+			
+			<input type="text" id="texto" value="¿CÓMO ME LLAMO?" size="52" maxlength="50" readonly/>
+				
+										
+			<script>							
+			
+				var cajaTexto = document.getElementById("texto");
+				
+				cajaTexto.value = "FRANCIS !!!"									// OK ... usa value.
+				
+				// cajaTexto.innerHTML = "LA MULA FRANCIS 1 !!!" 				// NO FUNCIONA.
+				
+				// cajaTexto.innerText = "LA MULA FRANCIS 2 !!!" 				// NO FUNCIONA.
+				
+				
+				//alert("SCRIPT FINALIZADO");
+				
+			</script>
+			
+			
+			
+			
+			<h1> 2 - CAPA DIV </h1>
+			
+			<div id="capa" style="width:300px; height:20px; border:1px solid blue; padding:5px; border-radius:25px;"></div>
+				
+										
+			<script>							
+			
+				var cajaCapa = document.querySelector("#capa");					// para el id es obligatoria la #
+				
+				//cajaCapa.value 		= "SISTEMA HYPERDINE 120-A/2";			// NO FUNCIONA.
+				
+				//cajaCapa.innerHTML	= "SISTEMA HYPERDINE 120-A/2";			// OK ... usar innerHTML o innerText.
+				
+				cajaCapa.innerText 		= "SISTEMA HYPERDINE 120-A/666"; 		// OK, TAMBIÉN FUNCIONA.				
+				
+			</script>			
+			
+			
+			
+			
+			<h1> 3 - BUTTON </h1>
+			
+			<button id="boton" style="width:300px; height:80px; padding:30px; border-radius:100px;
+							color:red; font-size:large;">
+				- SEARCHING -	
+			</button>
+				
+										
+			<script>							
+			
+				var cajaBoton = document.querySelector("#boton");				
+				
+				//cajaBoton.value 			= " !!!  FIRE !!!";						// NO FUNCIONA.
+				
+				//cajaBoton.innerHTML		= " !!!  FIRE !!!";						// OK ... usar innerHTML o innerText.
+				
+				//cajaBoton.innerText 		= " !!!  FIRE !!!";						// OK, FUNCIONA.				
+				
+				
+				/////// CONTROL DE EVENTO onclick:
+					
+					
+				//cajaBoton.addEventListener("click", function() {alert("TE ANIQUILO !!");});
+				
+				
+				
+				function f_disparar() {
+					var cajaBoton2 = document.querySelector("#boton");
+					cajaBoton2.innerText = " !!! DISPARA YAAA !!!";
+					return "POOOOOMMMMMMM !!!";
+				}
+				
+				/*
+				var x = f_disparar;
+				alert(x);
+				
+				var y = f_disparar();							
+				alert(y);
+				*/
+				
+				cajaBoton.addEventListener("click", f_disparar);
+				
+				
+			</script>			
+
+		</div>
+		
+	</body>
+
+</html>

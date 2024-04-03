@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<style type="text/css">	
+			
+			table {
+				border: 8px solid blue;
+				border-radius: 15px;
+				border-spacing: 15px;
+									
+			}
+			
+			td {
+				color: black;
+				font-size:25px;
+				text-align:center;
+				width:50px;
+				height:50px;		
+				padding: 5px;
+				border: 1px solid orange;
+				background-color: cyan;
+			}
+		
+		</style>
+	
+	
+		<script type="text/javascript">
+		
+			const CUANTAS_FILAS = 4;	// 4x4
+			const CUANTAS_COLUMNAS = 4;
+			
+			var contador = 1;
+			
+
+			function f_crearTablero() {
+				
+				let capaTablero = document.createElement("table");
+				
+				//document.body.appendChild(capaTablero);						// ENLAZADO POR DESCENDIENTES DIRECTOS.
+					
+				
+				document.getElementById("mesa").appendChild(capaTablero);		// AÑADIR LA TABLA A LA CAPA.
+				
+				
+				
+				for(let r=0; r<CUANTAS_FILAS; r++) {						// r = índice para filas.
+				
+					let nuevaFila = document.createElement("tr");			// FILAS.
+					
+					for(let c=0; c<CUANTAS_COLUMNAS; c++) {					// c = índice para columnas.
+						
+						let nuevaColumna = document.createElement("td");	// COLUMNAS.
+						
+						nuevaColumna.innerHTML = contador;
+						//nuevaColumna.innerText = contador;
+						//nuevaColumna.textContent = contador;
+													
+						nuevaFila.appendChild(nuevaColumna);
+						
+						contador++;
+					}
+
+					capaTablero.appendChild(nuevaFila);						// AÑADIR AL TABLERO.
+					
+				}
+				
+			}
+			
+			
+			
+			
+			/*
+			function f_crearTablero() {
+				
+				// <table id="tablero"></table>		//	AÑADIR AL BODY ESTA LÍNEA
+				
+				
+				var capaTablero = document.querySelector("#tablero");									
+				
+				for(let r=0; r<CUANTAS_FILAS; r++) {
+				
+					var nuevoElemento = document.createElement("tr");			// ELEMENTO.
+					
+					for(let c=0; c<CUANTAS_COLUMNAS; c++) {
+						nuevoElemento.innerHTML += "<td>" + contador + "</td>";
+						contador++;
+					}
+
+					capaTablero.appendChild(nuevoElemento);						// AÑADIR.
+					
+				}
+				
+			}
+			*/
+			
+		</script>
+		
+	</head>
+
+
+	<body>
+
+		<div align="center">
+
+			
+			<h1> TABLERO CASINO </h1>
+			
+
+			<br/><br/>
+			
+			
+			<button onclick="f_crearTablero();">
+				!! JUGAR !!
+			</button>
+			
+			
+			<br/><br/>
+			
+			<div id="mesa"></div>
+						
+			
+
+		</div>
+		
+	</body>
+
+</html>

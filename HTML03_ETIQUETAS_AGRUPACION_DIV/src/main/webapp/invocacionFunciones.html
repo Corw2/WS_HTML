@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<script type="text/javascript">
+		
+			function f_inicial() {				
+				alert("1 - FUNCION INICIAL - antes");
+				f_intermedia();
+				alert("1 - FUNCION INICIAL - despues");
+			}
+			
+			
+			function f_intermedia() {				
+				alert("2 - FUNCION INTERMEDIA - antes");
+				f_final();
+				f_final();
+				f_final();
+				alert("2 - FUNCION INTERMEDIA - despues");
+			}
+			
+			
+			function f_final() {				
+				alert("3 - FUNCION FINAL - MUERE !!! ");
+			}
+			
+		
+		</script>
+		
+	</head>
+
+
+	<body>
+	
+		<div align="center">
+			
+			<button onclick="f_inicial();">
+				PULSAME
+			</button>
+
+		</div>
+		
+	</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<style type="text/css">
+		
+			figure {
+				margin-top:70px;
+	 			width:250px;
+	 			border:3px solid red;
+	 			display: inline-block;		
+			}
+			
+			img {
+ 				width:220px;
+ 				margin:8px;
+ 				height:auto;
+ 				transition-duration:2s;
+ 				transition-property:src;			
+			}
+		
+		</style>
+		
+		<script type="text/javascript">
+		
+			function f_girarCarta(queCartaElegiste) {				
+				queCartaElegiste.src="img/oro.jpeg";
+			}
+		
+		</script>
+		
+				
+	</head>
+
+
+	<body>
+	
+		<div align="center">
+			
+			<figure>					
+				<img src="img/raro.jpg"/>						
+				<figcaption> EL BOSQUE ENCANTADO </figcaption>						
+			</figure>
+
+			<figure>					
+				<img src="img/raro.jpg" onclick="f_girarCarta(this);"/>						
+				<figcaption> EL BOSQUE ENCANTADO </figcaption>						
+			</figure>
+
+			<figure>					
+				<img src="img/raro.jpg"/>						
+				<figcaption> EL BOSQUE ENCANTADO </figcaption>						
+			</figure>
+
+		</div>
+		
+	</body>
+
+</html>

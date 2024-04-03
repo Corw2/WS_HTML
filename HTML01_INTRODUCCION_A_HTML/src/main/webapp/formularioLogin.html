@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<script type="text/javascript">
+		
+			const esSeguro = "password";
+			const noSeguro = "text";
+			
+			var cajaPassword;
+			
+			
+			function f_inicio() {
+				 cajaPassword = document.getElementById("password");
+			}
+			
+			
+			function f_ver() {
+				
+				if(esSeguro === cajaPassword.type) {
+					// CAMBIAR DE NO VISIBLE A VISIBLE (no seguro).
+					cajaPassword.type = noSeguro;
+					return;					
+				}
+				
+					// CAMBIAR DE VISIBLE A NO VISIBLE (seguro).
+					cajaPassword.type = esSeguro;
+				
+				
+			
+					/*
+					if(edad >= 18) {
+						alert("PUEDES COMPRAR TABACO EN LA MÁQUINA")
+					} else {
+						alert("NO PUEDES COMPRAR")
+					}
+					*/
+
+					
+					/*
+					if(edad >= 18) {
+						alert("PUEDES COMPRAR TABACO EN LA MÁQUINA")
+						return;
+					}
+					
+					alert("NO PUEDES COMPRAR")
+					*/				
+					
+					
+					
+			}
+		
+			
+			
+			
+			
+			
+			
+		</script>
+		
+		
+		<style type="text/css">
+			
+			button {
+					height:50px;
+					width:100px;
+					margin-left:50px;
+					}
+					
+					
+			button.redondeado {
+								border-radius:25px;
+								}
+								
+								
+			button.negrita { 
+							 font-weight:bolder;
+							 font-size:18px;
+							}				
+		
+		</style>
+		
+	</head>
+
+
+	<body onload="f_inicio();">
+	
+		<div align="center">
+			
+			<h1> LOGIN </h1>
+			
+			<br/><br/>	<!-- NO UTILICES LOS SALTOS DE LÍNEA <br> PARA SEPARAR -->
+			
+			
+			<form action="final/paginaFinal.html" method="get">
+			
+				<label for="usuario">USUARIO</label>
+				
+				<input type="text" name="usuario" id="usuario" 
+						size="30" maxlength="31" 
+						autofocus required/> 
+			
+
+				<br/><br/>
+
+
+				<label for="password">PASSWORD</label>
+				
+				<input type="password" name="password" id="password" 
+						size="8" maxlength="8" 
+						required/> 
+						
+				<input type="button" name="ver" id="ver" value="VER" 
+								onclick="f_ver();"/>			
+
+				<br/><br/>
+				<br/><br/>
+
+
+				<!-- CSS EN LÍNEA (afecta sólo a la etiqueta que lo
+						haya definido -->
+
+				<button type="reset" style="background-color:lime;">
+					BORRAR
+				</button>
+				
+				
+				<button type="submit" style="background-color:cyan; color:blue;"
+										class="redondeado negrita">
+					ENTRAR
+				</button>
+
+			</form>			
+
+
+			<br/><br/>
+			
+
+			<p> Introduce tu usuario y password para 
+					poder <strong style="text-transform:uppercase;">acceder</strong> al sistema </p>
+
+		</div>
+		
+	</body>
+
+</html>

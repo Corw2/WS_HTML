@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<style type="text/css">
+		
+			body {
+				background-color:black;
+				color:red;
+			}
+		
+			.foto {
+				width:200px;
+				height:200;
+				border-radius:25px;
+				border:1px solid red;
+				margin:80px;
+			}
+		</style>
+		
+		<script type="text/javascript">
+		
+			function feedMe() {
+				//alert(" ... ME MUERO DE HAMBREEEE !!! ");
+				
+				// PRESTA TOTAL ATENCIÓN A SI HAS PUESTOS O NO, LOS PARÉNTESIS ...
+				//
+				//		SIN PARÉNTESIS == LA DECLARACIÓN DE LA FUNCIÓN (es lo que queremos).
+				//
+				//		CON PARÉNTESIS == EJECUTA LA FUNCIÓN Y OBTIENES SU RESULTADO NO EN LA FUNCIÓN EN SÍ
+				
+				// QUÉ QUIERES, LA MÁQUINA DE LA COCACOLA (sin paréntesis) O SÓLO UN BOTE DE COCACOLA(con paréntesis)
+				
+				
+				
+				// EL NOMBRE DE LA FUNCIÓN REAL HACE LAS VECES DE VARIABLE EN LA QUE SE GUARDA LA DEFINICIÓN
+				//	DE DICHA FUNCIÓN ... ¿¿¿ PUNTEERO ???.
+
+						
+				// BIEN:
+				const funcionesCallBacks = [generarComida, generarBebida];
+				//	
+				//alert(funcionesCallBacks[0]);
+				//alert(funcionesCallBacks[1]);
+				
+				
+				
+				// MAL:		
+				//const funcionesCallBacks = [generarComida(), generarBebida()];
+				//
+				//alert(funcionesCallBacks[0]);
+				//alert(funcionesCallBacks[1]);				
+				
+				var aleatorio = parseInt(Math.random() * funcionesCallBacks.length); // [0..1]
+					
+				alimentar(3, funcionesCallBacks[aleatorio]);
+				
+			}
+			
+			
+			
+			function alimentar(cantidad, callBack) {
+				
+				
+				var laMesa = document.getElementById("mesa");
+				
+				laMesa.innerHTML = "";
+				
+				
+				for(let i=1; i<=cantidad; i++) {
+										
+					var retorno = callBack();
+					//alert("CALLBACK ... " + retorno);
+					
+					laMesa.innerHTML += "<img src='img/" + retorno + ".png' class='foto'/>";
+									
+					console.log(i + "º VEZ: " + retorno);					
+					
+				}				
+				
+			}
+			
+		
+			
+			// LA FUNCIÓN CALLBACK:
+			function generarComida() {
+				
+				const comidas = ["perrito", "hamburguesa", "chancinas"];
+				
+				return comidas[ parseInt(Math.random() * comidas.length ) ];
+				
+				//return "PERRITO CALIENTE";
+				
+			}
+			
+			
+			function generarBebida() {
+				
+				const bebidas = ["cocacola", "batido", "agua"];
+				
+				return bebidas[ parseInt(Math.random() * bebidas.length ) ];
+				
+				//return "CALIMOCHO";
+				
+			}
+			
+			
+		</script>
+		
+	</head>
+
+
+	<body>
+	
+		<div align="center">
+			
+			<h1> THE LITTLE SHOP OF HORRORS </h1>
+			
+			<br/>
+			
+			<!--  <button onclick="alert('DAMEEEE !!!'); feedMe();"> -->
+			
+			<button onclick="feedMe();">
+				<img src="img/audrey2.jpg"/>
+			</button>
+
+			<h3> DAME DE COMERRR !! </h3>
+
+
+			<br/><br/>
+			
+			<div id="mesa"></div>
+			
+		</div>
+		
+	</body>
+
+</html>

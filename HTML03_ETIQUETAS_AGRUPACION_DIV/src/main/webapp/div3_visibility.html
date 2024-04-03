@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<script type="text/javascript">
+		
+			function f_ocultarPrimeraCapa() {
+				document.getElementById("primeraCapa").style.visibility="hidden"
+				
+			}
+		
+			
+			function f_mostrarPrimeraCapa() {				
+				document.getElementById("primeraCapa").style.visibility="visible"				
+			}			
+			
+		</script>
+		
+	</head>
+
+
+	<body>
+	
+		<div align="center">
+			
+			<h1> CAPAS DIV </h1>
+
+
+			<div id="primeraCapa"
+					style="width:300px; height:100px; background-color:cyan;">
+			</div>
+
+			<div id="segundaCapa"
+					style="width:300px; height:100px; background-color:lime;">
+			</div>
+			
+			
+			<br/><br/>
+
+
+
+			<button onclick="f_ocultarPrimeraCapa();"> 
+				OCULTAR PRIMERA CAPA
+			</button>
+
+			<br/><br/>
+	
+			<button onclick="f_mostrarPrimeraCapa();"> 
+				MOSTRAR PRIMERA CAPA
+			</button>
+
+		</div>
+		
+	</body>
+
+</html>

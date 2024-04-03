@@ -1,0 +1,22 @@
+
+
+h1 {
+	color:red;	
+}
+
+body {
+	background-color: black;	
+}
+
+
+
+
+
+img.mediano {
+	width: 200px;
+	height: 200px;
+}
+
+img.redondeado {
+	border-radius: 150px;
+}

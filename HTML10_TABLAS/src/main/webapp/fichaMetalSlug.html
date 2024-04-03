@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<style type="text/css">
+		
+			table {				
+				width:700px;
+				/*height:500px;*/								
+				border:5px solid blue;
+				border-spacing:8px;
+				border-radius:25px;
+						
+			}
+		
+			td {
+				border:2px solid red;
+				background-color:black;
+				text-align:center;
+				border-radius:6px;
+				padding:15px;
+			}
+			
+			img {				
+				width:90%; /* EL TAMAÑO VIENE DEFINIDO POR EL CONTENEDOR PADRE */				
+				height:auto;
+				border-radius:10px;
+			}
+			
+			
+			td p.cabecera {
+				font-size:50px;
+				color:blueviolet;
+				font-weight:bold;
+				font-family:impact;
+				text-shadow:2px 2px 6px red;
+			}
+			
+			
+			.dinero {
+				font-size:1cm;
+				color:gold;				
+			}
+			
+			.capturas {
+				width:25%;
+				height:auto;
+			}
+			
+			.descripcion {
+				color:red;
+				font-size:small;
+				text-align:justify;
+			}
+			
+		</style>
+		
+		
+		<script type="text/javascript">
+		
+			function f_rellenar() {
+				
+				var celdas = document.querySelectorAll("td");				
+				
+				//alert("¿CUANTAS CELDAS? ... " + celdas.length);
+				
+				
+				celdas[0].innerHTML = "<img src='img/metalSlug.jpg'/>";
+				
+				celdas[1].innerHTML = "<p class='cabecera'> SNK <br/> METAL SLUG 6 </p>";
+				
+				celdas[2].innerHTML = "<label class='dinero'> 666 € </label>";
+				
+				// 3 .. 6
+				for(let i=3; i<=6; i++) {
+					celdas[i].innerHTML = "<img src='img/ms6_" + (i-2) + ".png'/>";
+				}
+				
+				const descripcion = "En 1996 parecía que Neo Geo había tocado su techo tecnológico, donde sagas como The King of Fighters o Samurai Shodown, seguían año a año captando adeptos con nuevas entregas. Sin embargo, un pequeño estudio hasta entonces desconocido llamado Nazca Corporation, presenta Metal Slug, un título que se convirtió en éxito mundial desde el primer día de lanzamiento. Hoy en día, preciadísimo objeto de coleccionismo, sigue siendo quizás el más deseado de todo el catálogo.";
+				
+				celdas[7].innerHTML = descripcion;				
+
+			}
+			
+			
+			function f_reproducir(operacion) {
+				var celda = document.getElementById("celdaVideo");
+				
+				if(operacion) {
+					
+					//celda.innerHTML = "";										
+					celda.innerHTML = "<iframe src='https://www.youtube.com/embed/UWAYQW8mMks?si=WosleMoRhkzb9y8x?autoplay=1&mute=1'></iframe>";					
+					
+				} else {					
+					celda.innerHTML = "<img src='img/metalSlug.jpg'/>";;
+				}
+			}
+		
+		</script>
+		
+	</head>
+
+
+	<body onload="f_rellenar();">
+	
+		<div align="center">
+			
+			<table>
+							
+				<tr>
+					<td rowspan="2" colspan="2" id="celdaVideo" 
+								onmouseover="f_reproducir(true);"
+									onmouseout="f_reproducir(false);">A</td>
+					<td colspan="2">B</td>
+				</tr>
+							
+				<tr>
+					<td colspan="2">C</td>
+				</tr>
+				
+				<tr>
+					<td class="capturas">E1</td>
+					<td class="capturas">E2</td>
+					<td class="capturas">E3</td>
+					<td class="capturas">E4</td>
+				</tr>
+				
+				<tr>
+					<td colspan="4" class="descripcion">F</td>
+				</tr>
+			
+				<caption style="caption-side:bottom;"> TIENDA RETRO-ARCADE </caption>						
+			
+			</table>
+
+		</div>
+		
+	</body>
+
+</html>

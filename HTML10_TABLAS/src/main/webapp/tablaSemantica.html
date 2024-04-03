@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DESARROLLO WEB</title>
+		
+		<style type="text/css">
+			
+			table {
+				border: 5px solid blue;
+				border-radius: 6px;
+				border-collapse: separate;	/* separate collapse */
+				border-spacing: 6px;
+				text-align: center;				
+			}
+			
+			
+			th, td {
+				border: 1px solid brown;
+				padding: 6px;
+			}
+			
+			
+			th {
+				background-color: grey;
+			}
+
+
+			caption, figcaption {
+				margin-top: 15px;
+				color: red;
+				font-size: small;
+				text-decoration: italic;
+			}
+
+						
+			caption {
+				caption-side: bottom;
+			}
+			
+		</style>
+		
+	</head>
+
+
+	<body>
+	
+		<div align="center">
+			
+			<h1> SEMANTICA </h1>
+			
+			<table>
+			
+				<!-- FILA DE CABECERA Y SUS COLUMNAS / CELDAS -->
+				<thead>
+					<tr>
+						<th>CLIENTE ID</th>
+						<th>NOMBRE</th>
+						<th>FACTURACION</th>
+					</tr>
+				</thead>
+
+
+				<!-- FILAS DE CUERPO Y SUS COLUMNAS / CELDAS -->
+				<tbody>				
+					<tr>
+						<td>1</td>
+						<td>JUAN</td>
+						<td>23000</td>
+					</tr>
+				
+					<tr>
+						<td>2</td>
+						<td>ANA</td>
+						<td>18047</td>
+					</tr>
+
+					<tr>
+						<td>3</td>
+						<td>LUIS</td>
+						<td>58766</td>
+					</tr>
+					
+				</tbody>
+			
+				<!-- PIE DE TABLA -->
+				<tfoot>
+					<caption> CLIENTES Y SU FACTURACION ANUAL </caption>
+				</tfoot>
+			
+			</table>
+
+			
+			<br/><br/>
+			
+			
+			<figure>
+				<img src="img/bitcoin.png" style="width:125px; height:auto;"/>
+				<figcaption> MONEDA DIGITAL </figcaption>			
+			</figure>	
+
+
+		</div>
+		
+	</body>
+
+</html>
